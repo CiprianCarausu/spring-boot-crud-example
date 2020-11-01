@@ -3,6 +3,7 @@ package cyker.javatechie.crud.example.service;
 import cyker.javatechie.crud.example.model.Product;
 import cyker.javatechie.crud.example.repository.ProductRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,14 +12,15 @@ import java.util.List;
 @Service
 public class ProductService {
 
-
     private final ProductRepository repository;
+
+
 
     public Product saveProduct(Product product) {
         return repository.save(product);
     }
 
-    public List<Product> saveAllProducts(List<Product> products) {
+    public List<Product> saveProducts(List<Product> products) {
         return repository.saveAll(products);
     }
 

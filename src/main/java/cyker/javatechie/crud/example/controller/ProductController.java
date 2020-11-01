@@ -3,6 +3,7 @@ package cyker.javatechie.crud.example.controller;
 import cyker.javatechie.crud.example.model.Product;
 import cyker.javatechie.crud.example.service.ProductService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class ProductController {
 
     @PostMapping("/addProducts")
     public List<Product> addProducts(@RequestBody List<Product> products) {
-        return service.saveAllProducts(products);
+        return service.saveProducts(products);
     }
 
     @GetMapping("/products")
